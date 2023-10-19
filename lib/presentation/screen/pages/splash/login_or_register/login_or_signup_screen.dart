@@ -24,9 +24,9 @@ class _LoginOrSignupScreenState extends State<LoginOrSignupScreen> {
                 buildContainerWithImage(),
                 Column(
                   children: [
-                    customButton('Log In', false),
+                    customAuthBtn('Log In', false),
                     SizedBox(height: btnSpaceEscape),
-                    customButton('Sign Up', true)
+                    customAuthBtn('Sign Up', true)
                   ],
                 )
               ],

@@ -5,7 +5,6 @@ import '../../../widget/utils/helpers_widget.dart';
 
 class SpashScreen extends StatefulWidget {
   const SpashScreen({super.key});
-
   @override
   State<SpashScreen> createState() => _SpashScreenState();
 }
@@ -22,7 +21,7 @@ class _SpashScreenState extends State<SpashScreen> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 buildContainerWithImage(),
-                const SizedBox(height: defaultPadding * 2),
+                const SizedBox(height: defaultSpace * 2),
                 const CircularProgressIndicator(),
               ],
             ),

@@ -24,45 +24,11 @@ class _LanguageSelectionState extends State<LanguageSelection> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 buildContainerWithImage(),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text('Language Selection',
-                        style: CustomTextStyle(textColor: kBlack).customText),
-                    SizedBox(
-                      height: defaultPadding * 2,
-                    ),
-                    Container(
-                        child: Container(
-                      width: customSelectLanguageWidth,
-                      height: customSelectLanguageHeight,
-                      decoration: BoxDecoration(
-                        color: kWhite,
-                        borderRadius: BorderRadius.circular(defaultPadding),
-                      ),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          Text('Sélectionner la langue',
-                              style: CustomTextStyle(textColor: kBlack)
-                                  .customText),
-                          InkWell(
-                            onTap: () {
-                              showSelectLanguageDialog(context);
-                            },
-                            child: Icon(
-                              Icons.arrow_drop_down,
-                            ),
-                          ),
-                        ],
-                      ),
-                    )),
-                  ],
-                ),
+                selectLanguageContainer(context),
                 SizedBox(
-                  height: defaultPadding,
+                  height: defaultSpace,
                 ),
-                customButton('Continue', true)
+                customAuthBtn('Continue', true)
               ],
             ),
           );
