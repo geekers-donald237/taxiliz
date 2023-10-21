@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:taxiliz/config/utils/constant.dart';
-import 'package:taxiliz/presentation/screen/pages/home/home_screen.dart';
-import 'package:taxiliz/presentation/screen/pages/splash/export_splash.dart';
-import 'package:taxiliz/presentation/screen/widget/utils/nav_bar/nav_bar.dart';
+import 'package:taxiliz/presentation/screen/pages/auth/forget_pwd.dart';
+import 'package:taxiliz/presentation/screen/pages/auth/login.dart';
+import 'package:taxiliz/presentation/screen/pages/auth/update_password.dart';
+import 'package:taxiliz/presentation/screen/pages/auth/verification_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
       title: 'TaxiLiz',
       theme: ThemeData(fontFamily: defaultFontFamily),
       debugShowCheckedModeBanner: false,
-      home: NavigationBottomBar(),
+      home: VerificationScreen(),
     );
   }
 }

@@ -13,7 +13,7 @@ Color kSecondaryColor = Color(0xFF97A6BF);
 Color kWhite = Colors.white;
 Color kTransparent = Colors.transparent;
 Color kBlack = Color(0xFF262626);
-Color AppbarBackgroundColor = kWhite;
+Color AppbarBackgroundColor = kTransparent;
 Color defaultIconColor = kBlack;
 
 /******************* IMAGE ALIGNEMENT ***************/

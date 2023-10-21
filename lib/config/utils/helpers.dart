@@ -83,31 +83,5 @@ class CardData {
   });
 }
 
-List<CardData> cardList = [
-  CardData(
-    title: "Car Name",
-    subtitle:
-        "Lorem ipsum dolor sit amet consectetur. Vulputate aliquam sit natoque amet senect  usnibh at nascetur. Facilisis amet noegesta  lemolestie lacus pretiufusce diam.",
-    imagePath: Localfiles.cardcar1,
-  ),
-  CardData(
-    title: "Car Name",
-    subtitle:
-        "Lorem ipsum dolor sit amet consectetur.   Vulputate aliquam sit natoque amet senect  usnibh at nascetur. Facilisis amet noegesta  lemolestie lacus pretiufusce diam.",
-    imagePath: Localfiles.cardcar2,
-  ),
-  CardData(
-    title: "Car Name",
-    subtitle:
-        "Lorem ipsum dolor sit amet consectetur.   Vulputate aliquam sit natoque amet senect  usnibh at nascetur. Facilisis amet noegesta  lemolestie lacus pretiufusce diam.",
-    imagePath: Localfiles.cardcar3,
-  ),
-  CardData(
-    title: "Car Name",
-    subtitle:
-        "Lorem ipsum dolor sit amet consectetur.   Vulputate aliquam sit natoque amet senect  usnibh at nascetur. Facilisis amet noegesta  lemolestie lacus pretiufusce diam.",
-    imagePath: Localfiles.cardcar4,
-  ),
-];
 
 

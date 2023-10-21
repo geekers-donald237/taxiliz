@@ -9,4 +9,10 @@ class Localfiles {
   static const String cardcar2 = BaseImageUrl + 'rectangle2.png';
   static const String cardcar3 = BaseImageUrl + 'rectangle3.png';
   static const String cardcar4 = BaseImageUrl + 'rectangle4.png';
+  static const String driver = BaseImageUrl + 'rafiki.png';
+  static const String investor = BaseImageUrl + 'frame.png';
+  static const String carImg1 = BaseImageUrl + 'img1.png';
+  static const String carImg2 = BaseImageUrl + 'img2.png';
+  static const String carImg3 = BaseImageUrl + 'img3.png';
+  static const String person = BaseImageUrl + 'person.png';
 }

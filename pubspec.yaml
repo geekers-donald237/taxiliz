@@ -38,6 +38,8 @@ dependencies:
   google_fonts: ^4.0.4
   country_flags: ^2.0.0
   flutter_svg: ^2.0.0
+  dependencies:
+  flutter_otp_text_field: ^1.1.0+2
   toggle_switch: ^2.1.0
 
 

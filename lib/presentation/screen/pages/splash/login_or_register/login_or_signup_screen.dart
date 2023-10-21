@@ -21,7 +21,7 @@ class _LoginOrSignupScreenState extends State<LoginOrSignupScreen> {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                buildContainerWithImage(),
+                buildContainerWithImage(Localfiles.logo),
                 Column(
                   children: [
                     customAuthBtn('Log In', false),

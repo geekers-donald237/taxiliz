@@ -1,13 +1,12 @@
-import 'package:flutter/material.dart';
-import 'package:taxiliz/config/theme/theme.dart';
-import 'package:taxiliz/config/utils/export_utils.dart';
+import '../../../../../config/theme/theme.dart';
+import '../../../../../config/utils/export_utils.dart';
 
-class CustomCard extends StatelessWidget {
+class CarLeaseCard extends StatelessWidget {
   final String title;
   final String subtitle;
   final String imagePath;
 
-  CustomCard({
+  CarLeaseCard({
     required this.title,
     required this.subtitle,
     required this.imagePath,
@@ -62,6 +61,13 @@ class CustomCard extends StatelessWidget {
                     ),
                   ),
                   Text(
+                    'Car Lease',
+                    style: TextStyle(
+                      color: kBlack,
+                      fontSize: fontsize_15,
+                    ),
+                  ),
+                  Text(
                     subtitle,
                     style: TextStyle(
                       color: kBlack,
@@ -71,13 +77,13 @@ class CustomCard extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text(
-                        'View Lease Details',
-                        style: AppStyle.cardViewLeaseDetailsTextStyle,
-                      ),
                       Center(
                         child: ElevatedButton(
-                          child: Text("Edit"),
+                          child: Text(
+                            "Edit Details",
+                            style:
+                                TextStyle(fontSize: fontsize_15, color: kBlack),
+                          ),
                           style: ElevatedButton.styleFrom(
                             primary: kDefaultColor,
                             elevation: noElevation,
@@ -86,7 +92,8 @@ class CustomCard extends StatelessWidget {
                           ),
                           onPressed: () {},
                         ),
-                      )
+                      ),
+                      Icon(Icons.delete_outline),
                     ],
                   ),
                 ],

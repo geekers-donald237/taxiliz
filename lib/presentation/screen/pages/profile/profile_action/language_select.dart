@@ -1,30 +1,25 @@
-import 'package:flutter/material.dart';
-import 'package:taxiliz/config/theme/theme.dart';
-import 'package:taxiliz/config/utils/localfile.dart';
-import '../../../../../config/utils/constant.dart';
-import '../../../../../config/utils/helpers.dart';
+import '../../../../../config/utils/export_utils.dart';
 import '../../../widget/utils/helpers_widget.dart';
 
-class LanguageSelection extends StatefulWidget {
-  const LanguageSelection({super.key});
+class LanguageSelect extends StatefulWidget {
+  const LanguageSelect({super.key});
 
   @override
-  State<LanguageSelection> createState() => _LanguageSelectionState();
+  State<LanguageSelect> createState() => _LanguageSelectState();
 }
 
-class _LanguageSelectionState extends State<LanguageSelection> {
+class _LanguageSelectState extends State<LanguageSelect> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: customAppbar(LangAppbarTitle),
       body: Container(
-        decoration: globalGradientDecoration,
         child: LayoutBuilder(builder: (context, constraints) {
           return Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                buildContainerWithImage(Localfiles.logo),
                 selectLanguageContainer(context),
                 SizedBox(
                   height: defaultSpace,

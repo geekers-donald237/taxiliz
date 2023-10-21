@@ -20,7 +20,7 @@ class _SpashScreenState extends State<SpashScreen> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                buildContainerWithImage(),
+                buildContainerWithImage(Localfiles.logo),
                 const SizedBox(height: defaultSpace * 2),
                 const CircularProgressIndicator(),
               ],

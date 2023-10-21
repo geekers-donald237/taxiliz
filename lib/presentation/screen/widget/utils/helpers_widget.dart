@@ -1,9 +1,15 @@
 import '../../../../config/theme/theme.dart';
 import '../../../../config/utils/constant.dart';
 import '../../../../config/utils/helpers.dart';
+import '../custom_textfield.dart';
 import '../export_widget.dart';
 
-Container buildContainerWithImage() {
+Container buildContainerWithImage(String imagePath) {
+  DecorationImage decorationImage = DecorationImage(
+    image: AssetImage(imagePath),
+    fit: BoxFit.fill, // Remplacez fill par le mode de déformation souhaité
+  );
+
   return Container(
     width: splashLogoContainerWith,
     height: splashLogoContainerHeight,
@@ -11,11 +17,12 @@ Container buildContainerWithImage() {
   );
 }
 
+
+
 Widget selectLanguageContainer(BuildContext context) {
   return Column(
     mainAxisAlignment: MainAxisAlignment.center,
     children: [
-      Text('Language Selection', style: AppStyle.AppbarTextStyle()),
       SizedBox(
         height: defaultSpace * 2,
       ),
@@ -26,6 +33,10 @@ Widget selectLanguageContainer(BuildContext context) {
         decoration: BoxDecoration(
           color: kWhite,
           borderRadius: BorderRadius.circular(defaultSpace),
+          border: Border.all(
+            color: kDefaultColor,
+            width: customBorderWidth,
+          ),
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -227,5 +238,58 @@ Widget DisplayAllHomeViews() {
         DisplayCarCard(),
       ],
     ),
+  );
+}
+
+Widget BuildTextInputForm(
+    bool diplay_picture, String btnText, List customTextFields) {
+  return Padding(
+    padding: const EdgeInsets.all(defaultSpace),
+    child: SingleChildScrollView(
+      child: Column(
+        children: [
+          if (diplay_picture) buildProfilePhoto(),
+          SizedBox(
+            height: defaultSpace,
+          ),
+          ...customTextFields,
+          SizedBox(
+            height: defaultSpace * 2,
+          ),
+          Row(
+            children: [
+              Expanded(child: customAuthBtn(btnText, true)),
+            ],
+          )
+        ],
+      ),
+    ),
+  );
+}
+
+Stack buildProfilePhoto() {
+  return Stack(
+    alignment: Alignment.center,
+    children: [
+      CircleAvatar(
+        radius: 80.0,
+        backgroundColor: Colors.grey,
+        backgroundImage: AssetImage('votre_image.jpg'),
+      ),
+      Positioned(
+        bottom: 0,
+        right: 0,
+        child: Container(
+          decoration: BoxDecoration(
+            shape: BoxShape.circle,
+            color: Colors.white,
+          ),
+          child: IconButton(
+            icon: Icon(Icons.camera_alt),
+            onPressed: () {},
+          ),
+        ),
+      ),
+    ],
   );
 }
