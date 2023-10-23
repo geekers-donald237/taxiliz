@@ -13,7 +13,7 @@ class _AddCarLeaseState extends State<AddCarLease> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: customAppbar(addCarAppbarTitle),
-      body: BuildTextInputForm(false, "Done", addcardInputs),
+      body: addCarMainView(context),
     );
   }
 }

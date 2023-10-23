@@ -1,5 +1,5 @@
-import '../../../../../config/theme/theme.dart';
-import '../../../../../config/utils/export_utils.dart';
+import '../../../config/theme/theme.dart';
+import '../../../config/utils/export_utils.dart';
 
 class CarLeaseCard extends StatelessWidget {
   final String title;
@@ -82,7 +82,7 @@ class CarLeaseCard extends StatelessWidget {
                           child: Text(
                             "Edit Details",
                             style:
-                                TextStyle(fontSize: fontsize_15, color: kBlack),
+                                TextStyle(fontSize: fontsize_10, color: kBlack),
                           ),
                           style: ElevatedButton.styleFrom(
                             primary: kDefaultColor,
@@ -93,7 +93,7 @@ class CarLeaseCard extends StatelessWidget {
                           onPressed: () {},
                         ),
                       ),
-                      Icon(Icons.delete_outline),
+                      Icon(Icons.delete_outline_outlined),
                     ],
                   ),
                 ],

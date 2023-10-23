@@ -13,7 +13,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: customAppbar(homeScreenAppbarTitle),
-        drawer: customHomeDrawer(),
-        body: DisplayAllHomeViews());
+        drawer: customHomeDrawer(context),
+        body: DisplayAllHomeViews(context));
   }
 }

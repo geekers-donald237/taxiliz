@@ -13,7 +13,7 @@ class _profileScreenState extends State<profileScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: customAppbar(profileAppBartitle),
-      body: mainProfileView(),
+      body: mainProfileView(context),
     );
   }
 }

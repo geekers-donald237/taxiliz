@@ -1,4 +1,5 @@
 import 'package:country_flags/country_flags.dart';
+import 'package:taxiliz/presentation/screen/widget/export_widget.dart';
 
 import '../theme/theme.dart';
 import 'export_utils.dart';
@@ -71,6 +72,52 @@ void showSelectLanguageDialog(BuildContext context) {
   );
 }
 
+showConfirmationDialog(BuildContext context, String title, String subtitle,
+    VoidCallback onYesPressed) {
+  showDialog(
+    context: context,
+    builder: (context) {
+      return AlertDialog(
+        title: Text(title, textAlign: TextAlign.center),
+        content: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text(
+              subtitle,
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                color: Color(0xFF262626),
+                fontSize: 16,
+                fontFamily: 'Poppins',
+                fontWeight: FontWeight.w500,
+                height: 1.33,
+              ),
+            ),
+            const SizedBox(height: 20),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Expanded(
+                    child: customDialogConfirmationBtn(
+                  'No',
+                  false,
+                  onTap: () {
+                    Navigator.of(context).pop();
+                  },
+                )),
+                const SizedBox(width: 20),
+                Expanded(
+                    child: customDialogConfirmationBtn('Yes', true,
+                        onTap: onYesPressed)),
+              ],
+            ),
+          ],
+        ),
+      );
+    },
+  );
+}
+
 class CardData {
   final String title;
   final String subtitle;
@@ -82,6 +129,3 @@ class CardData {
     required this.imagePath,
   });
 }
-
-
-

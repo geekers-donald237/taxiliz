@@ -15,8 +15,8 @@ class CustomDrawerListile extends StatelessWidget {
         ListTile(
           textColor: kBlack,
           iconColor: kBlack,
-          leading: Icon(icon),
           title: Text(title),
+          leading: Icon(icon),
           onTap: onTap,
         ),
         Divider(

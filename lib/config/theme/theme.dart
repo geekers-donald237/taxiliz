@@ -6,8 +6,7 @@ import '../utils/localfile.dart';
 
 /****************** COLOR DEFINITION ***************/
 
-Color kOtherColor = Color.fromRGBO(255, 255, 255, 1);
-MaterialColor kDefaultColor = Colors.blueGrey;
+Color kDefaultColor = Color.fromARGB(255, 143, 140, 140);
 Color kPrimaryColor = Color.fromARGB(255, 166, 179, 200);
 Color kSecondaryColor = Color(0xFF97A6BF);
 Color kWhite = Colors.white;
@@ -26,7 +25,7 @@ Alignment endAlignment = Alignment(0.0, 1.0);
 LinearGradient gradient = LinearGradient(
   begin: beginAlignment,
   end: endAlignment,
-  colors: [kPrimaryColor, kSecondaryColor, kWhite],
+  colors: [kSecondaryColor, kWhite],
 );
 
 /****************** Image FIT ***************/
@@ -128,4 +127,23 @@ class AppStyle {
     fontWeight: fontWeight_bold,
     height: 1.0,
   );
+  TextStyle getFirstTextSpanStyle() {
+    return TextStyle(
+      color: Color(0xFF262626),
+      fontSize: 15,
+      fontFamily: 'Poppins',
+      fontWeight: FontWeight.w400,
+      height: 0,
+    );
+  }
+
+  TextStyle getSecondTextSpanStyle() {
+    return TextStyle(
+      color: Color(0xFF262626),
+      fontSize: 15,
+      fontFamily: 'Poppins',
+      fontWeight: FontWeight.bold,
+      height: 0,
+    );
+  }
 }

@@ -28,8 +28,12 @@ class _CustomTextFieldState extends State<CustomTextField> {
           hintText: widget.hintText,
           prefixIcon: Icon(
             widget.icon,
-            color: kDefaultColor,
+            color: kBlack,
           ),
+          contentPadding:
+              EdgeInsets.symmetric(vertical: 12.0), // Ajuste la hauteur
+          filled: true, // Remplit avec une couleur d'arrière-plan
+          fillColor: Colors.white, // Couleur d'arrière-plan blanche
           border: OutlineInputBorder(
             borderRadius: defaultBorderRadius,
             borderSide: BorderSide(color: kBlack, width: customBorderWidth),
@@ -38,7 +42,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
               ? IconButton(
                   icon: Icon(
                     _obscureText ? Icons.visibility : Icons.visibility_off,
-                    color: kDefaultColor,
+                    color: kBlack,
                   ),
                   onPressed: () {
                     setState(() {
@@ -57,39 +61,52 @@ class _CustomTextFieldState extends State<CustomTextField> {
 class TextAreaWithLabel extends StatelessWidget {
   final String labelText;
   final TextEditingController controller;
+  final bool labelPositionIscentered;
 
-  TextAreaWithLabel({
-    required this.labelText,
-    required this.controller,
-  });
+  TextAreaWithLabel(
+      {required this.labelText,
+      required this.controller,
+      required this.labelPositionIscentered});
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          labelText,
-          style: TextStyle(
-            fontSize: fontsize_15,
-            fontWeight: fontWeight_bold,
+    MainAxisAlignment myAligment = labelPositionIscentered
+        ? MainAxisAlignment.center
+        : MainAxisAlignment.start;
+    return Container(
+      margin: EdgeInsets.only(top: 30),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            mainAxisAlignment: myAligment,
+            children: [
+              Text(
+                labelText,
+                style: TextStyle(
+                  fontSize: fontsize_15,
+                  fontWeight: fontWeight_bold,
+                ),
+              ),
+            ],
           ),
-        ),
-        SizedBox(
-          height: 5,
-        ),
-        TextField(
-          controller: controller,
-          maxLines: 5, // Vous pouvez ajuster le nombre de lignes souhaité
-          decoration: InputDecoration(
-            border: OutlineInputBorder(
-              borderRadius: defaultBorderRadius,
-              borderSide: BorderSide(color: kBlack, width: customBorderWidth),
-            ), // Bordure de la zone de texte
-            contentPadding: EdgeInsets.all(defaultSpace), // Rembourrage interne
+          SizedBox(
+            height: 5,
           ),
-        ),
-      ],
+          TextField(
+            controller: controller,
+            maxLines: 5, // Vous pouvez ajuster le nombre de lignes souhaité
+            decoration: InputDecoration(
+              border: OutlineInputBorder(
+                borderRadius: defaultBorderRadius,
+                borderSide: BorderSide(color: kBlack, width: customBorderWidth),
+              ), // Bordure de la zone de texte
+              contentPadding:
+                  EdgeInsets.all(defaultSpace), // Rembourrage interne
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

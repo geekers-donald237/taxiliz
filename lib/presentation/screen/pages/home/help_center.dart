@@ -8,9 +8,7 @@ class HelpCenterScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: customAppbar(helcenterAppbarTitle),
-      body: Center(
-        child: BuildTextInputForm(false, "Submit", helpcenterInputForm),
-      ),
+      body: helpCenterMainView(context),
     );
   }
 }

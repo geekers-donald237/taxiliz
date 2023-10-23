@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:taxiliz/presentation/screen/pages/home/home_screen.dart';
 import 'package:taxiliz/presentation/screen/pages/notification/notification_screen.dart';
-import 'package:taxiliz/presentation/screen/pages/profile/profile_screen.dart';
+
+import '../../pages/profile/view_profile.dart';
 
 class NavigationBottomBar extends StatefulWidget {
   const NavigationBottomBar({super.key});

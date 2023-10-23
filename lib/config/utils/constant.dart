@@ -1,7 +1,6 @@
-import 'package:country_flags/country_flags.dart';
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
+import 'package:taxiliz/config/routes/routes_name.dart';
 import 'package:taxiliz/config/theme/theme.dart';
-import 'package:taxiliz/presentation/screen/pages/auth/login.dart';
 
 import '../../presentation/screen/widget/custom_textfield.dart';
 import '../../presentation/screen/widget/export_widget.dart';
@@ -21,10 +20,12 @@ const double noElevation = 0.0;
 const double notificationCardHeight = 70.0;
 const double inputSeparation = 5.0;
 
+const int defaultTimer = 2;
+
 // Tailles de bouton
 const double customAuthBtnWidth = 250.0;
 const double customAuthBtnHeight = 50.0;
-const double customBorderWidth = 1.0;
+const double customBorderWidth = 1.5;
 const double customSelectLanguageWidth = 300.0;
 const double customSelectLanguageHeight = 50.0;
 
@@ -50,14 +51,18 @@ const String viewProfileAppBartitle = "Profile";
 const String changePasswordAppbarTitle = "Change Password";
 const String helcenterAppbarTitle = "Help Center";
 const String termsAppbarTitle = "Terms And Condition";
+const String privacyAppbarTitle = "Privacy Policy";
+
 const String LangAppbarTitle = "Language Selection";
-const String manageCarAppbarTitle = "Manage  Selection";
+const String manageCarAppbarTitle = "Manage Car Lease";
 const String chooseUserTypeappBartitle = "Choose User Type";
 const String addCarAppbarTitle = "Add car On Lease";
 const String receivedApply = "Received Apply";
 const String forgetPwdAppBatTitle = "Forgot Password";
 const String updateAppbarTitle = "Update Password";
 const String verificationAppbarTitle = "Update Password";
+const String registerAppbarTitle = "Register now";
+const String LoginAppbarTitle = "Login ";
 
 // Dimensions du tiroir (Drawer)
 const double drawerAvatarRadius = 40;
@@ -76,75 +81,19 @@ const double cardImageWidth = 160.0;
 const double cardEditButtonWidth = 40.0;
 const double cardEditButtonHeight = 20.0;
 
-final drawerHomeItems = [
-  DrawerItem(
-    icon: Icons.book,
-    title: 'View Contract',
-    onTap: () {
-      // Action when 'View Contract' is tapped
-    },
-  ),
-  DrawerItem(
-    icon: Icons.help_center,
-    title: 'Help Center',
-    onTap: () {
-      // Action when 'Help Center' is tapped
-    },
-  ),
-  DrawerItem(
-    icon: Icons.policy_outlined,
-    title: 'Terms and Conditions',
-    onTap: () {
-      // Action when 'Terms and Conditions' is tapped
-    },
-  ),
-  DrawerItem(
-    icon: Icons.privacy_tip_outlined,
-    title: 'Privacy Policy',
-    onTap: () {
-      // Action when 'Privacy Policy' is tapped
-    },
-  ),
-  DrawerItem(
-    icon: Icons.toggle_off_outlined,
-    title: 'Switch to Driver',
-    onTap: () {
-      // Action when 'Switch to Driver' is tapped
-    },
-  ),
-];
+// ************** AUTH INPUT ***********//
 
-final profileItems = [
-  DrawerItem(
-    icon: Icons.person,
-    title: 'profile',
-    onTap: () {},
+final loginScreenInput = [
+  CustomTextField(
+    icon: Icons.email_outlined,
+    hintText: 'Email',
   ),
-  DrawerItem(
-    icon: Icons.manage_accounts_outlined,
-    title: 'Manage Car LEase',
-    onTap: () {},
+  CustomTextField(
+    icon: Icons.lock_outline_rounded,
+    hintText: 'Password',
+    isPassword: true,
   ),
-  DrawerItem(
-    icon: Icons.lock_outlined,
-    title: 'Change Password',
-    onTap: () {},
-  ),
-  DrawerItem(
-    icon: Icons.language_outlined,
-    title: 'Change Language',
-    onTap: () {},
-  ),
-  DrawerItem(
-    icon: Icons.logout_outlined,
-    title: 'Logout',
-    onTap: () {},
-  ),
-  DrawerItem(
-    icon: Icons.delete_outline,
-    title: 'Delete Account',
-    onTap: () {},
-  ),
+  buildForgetPasswordRow(),
 ];
 
 final profileCustomInputs = [
@@ -162,7 +111,7 @@ final profileCustomInputs = [
   ),
   CustomTextField(
     icon: Icons.phone_android_sharp,
-    hintText: 'Telephone',
+    hintText: 'Mobile Number',
   ),
 ];
 
@@ -184,10 +133,71 @@ final changepwdCustomInputs = [
   ),
 ];
 
-final helpcenterInputForm = [
+final signInTextInputs = [
   CustomTextField(
     icon: Icons.person_outlined,
     hintText: 'Username',
+  ),
+  CustomTextField(
+    icon: Icons.person_outlined,
+    hintText: 'Lastname',
+  ),
+  CustomTextField(
+    icon: Icons.email_outlined,
+    hintText: 'Email',
+  ),
+  CustomTextField(
+    icon: Icons.phone_android_sharp,
+    hintText: 'Telephone',
+  ),
+  Row(
+    children: [
+      Expanded(
+        child: CustomTextField(
+          icon: Icons.flag_outlined,
+          hintText: 'Country',
+        ),
+      ),
+      SizedBox(
+        width: 5,
+      ),
+      Expanded(
+        child: CustomTextField(
+          icon: Icons.location_city,
+          hintText: 'City',
+        ),
+      ),
+    ],
+  ),
+  CustomTextField(
+    icon: Icons.lock_outline_rounded,
+    hintText: 'Password',
+    isPassword: true,
+  ),
+  CustomTextField(
+    icon: Icons.lock_outline_rounded,
+    hintText: 'Confirm Password',
+    isPassword: true,
+  ),
+  Row(
+    children: [
+      Checkbox(
+        value: false,
+        onChanged: (bool? value) {},
+      ),
+      Flexible(
+        child: Text(
+          "By signing up you accept the Terms of Service & Privacy Policy",
+        ),
+      ),
+    ],
+  )
+];
+
+final helpcenterInputForm = [
+  CustomTextField(
+    icon: Icons.person_outlined,
+    hintText: 'Full Name',
   ),
   CustomTextField(
     icon: Icons.email_outlined,
@@ -196,6 +206,7 @@ final helpcenterInputForm = [
   TextAreaWithLabel(
     labelText: 'Query ',
     controller: TextEditingController(),
+    labelPositionIscentered: true,
   ),
 ];
 
@@ -292,6 +303,21 @@ final addcardInputs = [
     icon: Icons.clear_all_rounded,
     hintText: 'Add Frequnency',
   ),
+  Row(
+    mainAxisAlignment: MainAxisAlignment.end,
+    children: [
+      Text(
+        '(Weekly, Monthly, Quarterly)',
+        style: TextStyle(
+          color: kBlack,
+          fontSize: 8,
+          fontFamily: 'Poppins',
+          fontWeight: FontWeight.w500,
+          height: 0,
+        ),
+      )
+    ],
+  ),
   SizedBox(
     height: 10,
   ),
@@ -334,6 +360,7 @@ final addcardInputs = [
   TextAreaWithLabel(
     labelText: 'Description ',
     controller: TextEditingController(),
+    labelPositionIscentered: false,
   ),
   SizedBox(
     height: 15,
@@ -357,24 +384,6 @@ final addcardInputs = [
             .carImg3), // Remplacez 'assets/car1.jpg' par le chemin de votre première image
       ],
     ),
-  )
-];
-
-final loginScreenInput = [
-  CustomTextField(
-    icon: Icons.email_outlined,
-    hintText: 'Email',
-  ),
-  CustomTextField(
-    icon: Icons.lock_outline_rounded,
-    hintText: 'Password',
-    isPassword: true,
-  ),
-  Row(
-    mainAxisAlignment: MainAxisAlignment.end,
-    children: [
-      Text('Forget Password?'),
-    ],
   )
 ];
 
@@ -475,25 +484,25 @@ List<CardData> cardList = [
   CardData(
     title: "Car Name",
     subtitle:
-        "Lorem ipsum dolor sit amet consectetur. Vulputate aliquam sit natoque amet senect  usnibh at nascetur. Facilisis amet noegesta  lemolestie lacus pretiufusce diam.",
+        "Lorem ipsum dolor sit amet consectetur. Vulputate aliquam sit natoque amet senect  usnibh at nascetur. Facilisis amet noegesta   .",
     imagePath: Localfiles.cardcar1,
   ),
   CardData(
     title: "Car Name",
     subtitle:
-        "Lorem ipsum dolor sit amet consectetur.   Vulputate aliquam sit natoque amet senect  usnibh at nascetur. Facilisis amet noegesta  lemolestie lacus pretiufusce diam.",
+        "Lorem ipsum dolor sit amet consectetur.   Vulputate aliquam sit natoque amet senect  usnibh at nascetur. Facilisis amet noegesta   .",
     imagePath: Localfiles.cardcar2,
   ),
   CardData(
     title: "Car Name",
     subtitle:
-        "Lorem ipsum dolor sit amet consectetur.   Vulputate aliquam sit natoque amet senect  usnibh at nascetur. Facilisis amet noegesta  lemolestie lacus pretiufusce diam.",
+        "Lorem ipsum dolor sit amet consectetur.   Vulputate aliquam sit natoque amet senect  usnibh at nascetur. Facilisis amet noegesta   .",
     imagePath: Localfiles.cardcar3,
   ),
   CardData(
     title: "Car Name",
     subtitle:
-        "Lorem ipsum dolor sit amet consectetur.   Vulputate aliquam sit natoque amet senect  usnibh at nascetur. Facilisis amet noegesta  lemolestie lacus pretiufusce diam.",
+        "Lorem ipsum dolor sit amet consectetur.   Vulputate aliquam sit natoque amet senect  usnibh at nascetur. Facilisis amet noegesta   .",
     imagePath: Localfiles.cardcar4,
   ),
 ];

@@ -12,10 +12,9 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBodyBehindAppBar: true,
       appBar: customAppbar(changePasswordAppbarTitle),
-      body: Center(
-        child: BuildTextInputForm(false, "Update", changepwdCustomInputs),
-      ),
+      body: changePasswordMainView(context),
     );
   }
 }

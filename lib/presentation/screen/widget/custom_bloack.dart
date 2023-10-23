@@ -1,3 +1,5 @@
+import 'package:taxiliz/config/routes/routes_name.dart';
+
 import '../../../../../config/theme/theme.dart';
 import '../../../../../config/utils/export_utils.dart';
 
@@ -47,27 +49,32 @@ class CustomBlock extends StatelessWidget {
             right: showIcon ? 0 : 5,
             top: 0,
             child: showIcon
-                ? Container(
-                    width: 42,
-                    height: 42,
-                    decoration: ShapeDecoration(
-                      color: kDefaultColor, // Couleur blanche
-                      shape: RoundedRectangleBorder(
-                        side: BorderSide(
-                          width: 1,
-                          strokeAlign: BorderSide.strokeAlignOutside,
-                          color: Color(0xFFACACAC),
-                        ),
-                        borderRadius: BorderRadius.only(
-                          topRight: Radius.circular(10),
-                          bottomRight: Radius.circular(10),
+                ? InkWell(
+                    onTap: () {
+                      NavigationServices(context).gotoAddcarScreen();
+                    },
+                    child: Container(
+                      width: 42,
+                      height: 42,
+                      decoration: ShapeDecoration(
+                        color: kDefaultColor, // Couleur blanche
+                        shape: RoundedRectangleBorder(
+                          side: BorderSide(
+                            width: 1,
+                            strokeAlign: BorderSide.strokeAlignOutside,
+                            color: Color(0xFFACACAC),
+                          ),
+                          borderRadius: BorderRadius.only(
+                            topRight: Radius.circular(10),
+                            bottomRight: Radius.circular(10),
+                          ),
                         ),
                       ),
-                    ),
-                    child: Center(
-                      child: Icon(
-                        Icons.add,
-                        color: Color(0xFFE8E8E8),
+                      child: Center(
+                        child: Icon(
+                          Icons.add,
+                          color: Color(0xFFE8E8E8),
+                        ),
                       ),
                     ),
                   )
