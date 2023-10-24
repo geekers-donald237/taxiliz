@@ -3,7 +3,8 @@ import 'dart:async';
 import 'package:taxiliz/config/routes/routes_name.dart';
 
 import 'package:taxiliz/config/utils/export_utils.dart';
-import '../../widget/utils/helpers_widget.dart';
+import '../../widget/utils/reusable_other.dart';
+import '../../widget/utils/main_view.dart';
 
 class SpashScreen extends StatefulWidget {
   const SpashScreen({super.key});

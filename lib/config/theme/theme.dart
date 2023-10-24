@@ -1,149 +1,120 @@
-import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import '../utils/export_utils.dart';
 
-import '../utils/constant.dart';
-import '../utils/localfile.dart';
-
-/****************** COLOR DEFINITION ***************/
-
-Color kDefaultColor = Color.fromARGB(255, 143, 140, 140);
-Color kPrimaryColor = Color.fromARGB(255, 166, 179, 200);
-Color kSecondaryColor = Color(0xFF97A6BF);
-Color kWhite = Colors.white;
-Color kTransparent = Colors.transparent;
-Color kBlack = Color(0xFF262626);
-Color AppbarBackgroundColor = kTransparent;
-Color defaultIconColor = kBlack;
-
-/******************* IMAGE ALIGNEMENT ***************/
-
-Alignment beginAlignment = Alignment(0.0, -1.0);
-Alignment endAlignment = Alignment(0.0, 1.0);
-
-/****************** lINEAR GRADIENT ***************/
-
-LinearGradient gradient = LinearGradient(
-  begin: beginAlignment,
-  end: endAlignment,
-  colors: [kSecondaryColor, kWhite],
-);
-
-/****************** Image FIT ***************/
-BoxFit fill = BoxFit.fill;
-
-DecorationImage decorationImage = DecorationImage(
-  image: AssetImage(Localfiles.logo),
-  fit: fill,
-);
-
-final defaultDrawerPadding = EdgeInsets.only(
-  left: drawerVerticalPadding,
-  top: drawerHorizontalPadding,
-);
-
-Decoration globalGradientDecoration = BoxDecoration(gradient: gradient);
-
-final cardPadding = EdgeInsets.all(defaultSpace);
-
-/****************** CUSTOM TEXT STYLE ***************/
 class AppStyle {
-  static TextStyle AppbarTextStyle() {
-    return TextStyle(
-      color: kBlack,
-      fontSize: fontsize_20,
-      fontWeight: fontWeight_500,
-    );
-  }
+  // Couleurs
+  static final Color kDefaultColor =  Color.fromARGB(255, 143, 140, 140);
+  static final Color kSecondaryColor =  Color(0xFF97A6BF);
+  static final Color kWhite = Colors.white;
 
-  static TextStyle drawerTitleStyle() {
-    return TextStyle(
-      color: Color(0xFF262626),
-      fontSize: fontsize_15,
-      fontWeight: fontWeight_500,
-      height: 0,
-    );
-  }
+  static final Color kGreen = Colors.green;
+  static final Color kTransparent = Colors.transparent;
+  static final Color kBlack =  Color(0xFF262626);
+  static final Color AppbarBackgroundColor = kTransparent;
+  static final Color defaultIconColor = kBlack;
 
-  static TextStyle drawersubtitleStyle() {
-    return TextStyle(
-      color: Color(0xFF262626),
-      fontSize: fontsize_10,
-      fontWeight: fontWeight_500,
-      height: 0,
-    );
-  }
+  // Alignements d'images
+  static final Alignment beginAlignment =  Alignment(0.0, -1.0);
+  static final Alignment endAlignment =  Alignment(0.0, 1.0);
 
-  static TextStyle homeDefaultBlockText() {
-    return TextStyle(
-      color: Color(0xFF262626),
-      fontSize: 16,
-      fontFamily: 'Poppins',
-      fontWeight: FontWeight.w500,
-      height: 0,
-      letterSpacing: -0.32,
-    );
-  }
+  // Gradient linéaire
+  static final LinearGradient gradient = LinearGradient(
+    begin: beginAlignment,
+    end: endAlignment,
+    colors: [kSecondaryColor, kWhite],
+  );
 
-  static TextStyle cardViewLeaseDetailsTextStyle = TextStyle(
-    color: Color(0xFF262626),
+  // Ajustement d'image
+  static final BoxFit fill = BoxFit.fill;
+  static final DecorationImage decorationImage = DecorationImage(
+    image: const AssetImage(Localfiles.logo),
+    fit: fill,
+  );
+
+  static final EdgeInsets defaultDrawerPadding =  EdgeInsets.only(
+    left: drawerVerticalPadding,
+    top: drawerHorizontalPadding,
+  );
+
+  static final Decoration globalGradientDecoration =
+      BoxDecoration(gradient: gradient);
+  static final EdgeInsets cardPadding =  EdgeInsets.all(defaultSpacing);
+
+  // Text Styles
+  static final TextStyle kBlackTextStyle = TextStyle(
+    color: kBlack,
+  );
+
+  static final TextStyle kBoldTextStyle = const TextStyle(
+    fontWeight: FontWeight.bold,
+  );
+
+  static final TextStyle appbarTextStyle = const TextStyle(
+    fontSize: fontsize_20,
+    fontWeight: fontWeight_500,
+  ).merge(kBlackTextStyle);
+
+  static final TextStyle drawerTitleStyle = const TextStyle(
+    fontSize: fontsize_15,
+    fontWeight: fontWeight_500,
+  ).merge(kBlackTextStyle);
+
+  static final TextStyle drawersubtitleStyle = const TextStyle(
     fontSize: fontsize_10,
     fontWeight: fontWeight_500,
-    height: 0.10,
-  );
+  ).merge(kBlackTextStyle);
+
+  static final TextStyle homeDefaultBlockText = const TextStyle(
+    fontSize: fontsize_15,
+    fontWeight: FontWeight.w500,
+  ).merge(kBlackTextStyle);
+
+  static final TextStyle cardViewLeaseDetailsTextStyle = const TextStyle(
+    fontSize: fontsize_10,
+    fontWeight: fontWeight_500,
+  ).merge(kBlackTextStyle);
 
   static TextStyle btnTextStyle(Color color) {
     return TextStyle(
       color: color,
       fontSize: fontsize_20,
       fontWeight: fontWeight_400,
-      height: 0,
-      letterSpacing: -0.32,
     );
   }
 
-  static TextStyle dateStyle = TextStyle(
-    color: kBlack,
+  static final TextStyle dateStyle = const TextStyle(
     fontSize: fontsize_10,
     fontWeight: fontWeight_400,
-    height: 1.0,
-  );
+    height: defaultTextHeight,
+  ).merge(kBlackTextStyle);
 
-  static TextStyle notifCardTitle = TextStyle(
-    color: kBlack,
+  static final TextStyle notifCardTitle = const TextStyle(
     fontSize: fontsize_15,
     fontWeight: fontWeight_400,
-    height: 1.0,
-  );
+    height: defaultTextHeight,
+  ).merge(kBlackTextStyle);
 
-  static TextStyle notifCardDescription = TextStyle(
-    color: kBlack,
+  static final TextStyle notifCardDescription = const TextStyle(
     fontSize: fontsize_10,
     fontWeight: fontWeight_400,
-  );
+  ).merge(kBlackTextStyle);
 
-  static TextStyle viewMore = TextStyle(
-    color: kBlack,
+  static final TextStyle viewMore = const TextStyle(
     fontSize: fontsize_10,
     fontWeight: fontWeight_bold,
-    height: 1.0,
-  );
-  TextStyle getFirstTextSpanStyle() {
-    return TextStyle(
-      color: Color(0xFF262626),
-      fontSize: 15,
-      fontFamily: 'Poppins',
+    height: defaultTextHeight,
+  ).merge(kBlackTextStyle);
+
+  static TextStyle firstTextSpanStyle() {
+    return const TextStyle(
+      fontSize: fontsize_15,
       fontWeight: FontWeight.w400,
-      height: 0,
-    );
+    ).merge(kBlackTextStyle);
   }
 
-  TextStyle getSecondTextSpanStyle() {
-    return TextStyle(
-      color: Color(0xFF262626),
-      fontSize: 15,
-      fontFamily: 'Poppins',
+  static TextStyle secondTextSpanStyle() {
+    return const TextStyle(
+      fontSize: fontsize_15,
       fontWeight: FontWeight.bold,
-      height: 0,
-    );
+    ).merge(kBlackTextStyle);
   }
 }

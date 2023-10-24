@@ -1,19 +1,4 @@
-import 'package:taxiliz/presentation/screen/pages/auth/forget_pwd.dart';
-import 'package:taxiliz/presentation/screen/pages/auth/login.dart';
-import 'package:taxiliz/presentation/screen/pages/auth/register.dart';
-import 'package:taxiliz/presentation/screen/pages/home/add_car_lease.dart';
-import 'package:taxiliz/presentation/screen/pages/home/received_applies.dart';
-import 'package:taxiliz/presentation/screen/pages/home/terms_and_condition.dart';
-
-import '../../presentation/screen/pages/home/help_center.dart';
-import '../../presentation/screen/pages/home/privacy_policy.dart';
-import '../../presentation/screen/pages/profile/change_profile.dart';
-import '../../presentation/screen/pages/profile/manage_car.dart';
-import '../../presentation/screen/pages/profile/update_password.dart';
-import '../../presentation/screen/pages/splash/login_or_signup_screen.dart';
-import '../../presentation/screen/pages/splash/select_language.dart';
-import '../../presentation/screen/widget/bottom_bar/nav_bar.dart';
-import '../../presentation/screen/widget/export_widget.dart';
+import '../../core/export_views.dart';
 
 class NavigationServices {
   NavigationServices(this.context);
@@ -35,7 +20,7 @@ class NavigationServices {
   }
 
   Future<dynamic> gotoLoginOrSignupScreen() async {
-    return await _pushMaterialPageRoute((LoginOrSignupScreen()));
+    return await _pushMaterialPageRoute((const LoginOrSignupScreen()));
   }
 
   Future<dynamic> gotoSelectLanguageScreen(bool isInsideProfilePage) async {
@@ -45,52 +30,50 @@ class NavigationServices {
   }
 
   Future<dynamic> gotoRegisterScreen() async {
-    return await _pushMaterialPageRoute((RegisterScreen()));
+    return await _pushMaterialPageRoute((const RegisterScreen()));
   }
 
   Future<dynamic> gotoLoginScreen() async {
-    return await _pushMaterialPageRoute((LoginScreen()));
+    return await _pushMaterialPageRoute((const LoginScreen()));
   }
 
   Future<dynamic> gotoForgetPasswordScreen() async {
-    return await _pushMaterialPageRoute((ForgetPassword()));
+    return await _pushMaterialPageRoute((const ForgetPassword()));
   }
 
   Future<dynamic> gotoChangeProfileScreen() async {
-    return await _pushMaterialPageRoute((changeProfileScreen()));
+    return await _pushMaterialPageRoute((const changeProfileScreen()));
   }
 
   Future<dynamic> gotoChangePasswordScreen() async {
-    return await _pushMaterialPageRoute((ChangePasswordScreen()));
+    return await _pushMaterialPageRoute((const ChangePasswordScreen()));
   }
 
   Future<dynamic> gotoManageCarLeaseScreen() async {
-    return await _pushMaterialPageRoute((ManageCarLease()));
+    return await _pushMaterialPageRoute((const ManageCarLease()));
   }
 
   Future<dynamic> gotoTermsAndConditionScreen() async {
-    return await _pushMaterialPageRoute(TermsAndCondition());
+    return await _pushMaterialPageRoute(const TermsAndCondition());
   }
 
   Future<dynamic> gotoHelpCenterScreen() async {
-    return await _pushMaterialPageRoute(HelpCenterScreen());
+    return await _pushMaterialPageRoute(const HelpCenterScreen());
   }
 
   Future<dynamic> gotoPrivacyPolicyScreen() async {
-    return await _pushMaterialPageRoute(PrivacyPolicyScreen());
+    return await _pushMaterialPageRoute(const PrivacyPolicyScreen());
   }
 
-  
   Future<dynamic> gotoAddcarScreen() async {
-    return await _pushMaterialPageRoute(AddCarLease());
+    return await _pushMaterialPageRoute(const AddCarLease());
   }
 
-  
   Future<dynamic> gotoViewReceivedScreen() async {
-    return await _pushMaterialPageRoute(ReceivedApply());
+    return await _pushMaterialPageRoute(const ReceivedApply());
   }
 
-   Future<dynamic> gotoHomeMainPage() async {
-    return await _pushMaterialPageRoute(NavigationBottomBar());
+  Future<dynamic> gotoHomeMainPage() async {
+    return await _pushMaterialPageRoute(const NavigationBottomBar());
   }
 }

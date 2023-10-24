@@ -1,5 +1,6 @@
 import '../../../../config/utils/constant.dart';
 import '../../widget/export_widget.dart';
+import '../../widget/utils/main_view.dart';
 
 class LanguageSelection extends StatefulWidget {
   final bool isInsideProfilePage;

@@ -18,14 +18,14 @@ class CustomBlock extends StatelessWidget {
           Positioned.fill(
             child: Container(
               decoration: ShapeDecoration(
-                color: Color(0xFFE8E8E8),
+                color: AppStyle.kWhite,
                 shape: RoundedRectangleBorder(
                   side: BorderSide(
-                    width: 1,
+                    width: customBorderWidth,
                     strokeAlign: BorderSide.strokeAlignOutside,
-                    color: Color(0xFFACACAC),
+                    color: AppStyle.kDefaultColor,
                   ),
-                  borderRadius: BorderRadius.circular(10),
+                  borderRadius: BorderRadius.circular(defaultSpacing),
                 ),
               ),
             ),
@@ -39,9 +39,7 @@ class CustomBlock extends StatelessWidget {
               style: TextStyle(
                 color: Color(0xFF262626),
                 fontSize: 16,
-                fontFamily: 'Poppins',
                 fontWeight: FontWeight.w500,
-                height: 0,
               ),
             ),
           ),
@@ -57,7 +55,7 @@ class CustomBlock extends StatelessWidget {
                       width: 42,
                       height: 42,
                       decoration: ShapeDecoration(
-                        color: kDefaultColor, // Couleur blanche
+                        color: AppStyle.kDefaultColor, // Couleur blanche
                         shape: RoundedRectangleBorder(
                           side: BorderSide(
                             width: 1,

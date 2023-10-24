@@ -1,5 +1,5 @@
 import '../../../../config/utils/export_utils.dart';
-import '../../widget/utils/helpers_widget.dart';
+import '../../widget/utils/reusable_other.dart';
 
 class NotificationScreen extends StatefulWidget {
   const NotificationScreen({super.key});
@@ -12,7 +12,7 @@ class _NotificationScreenState extends State<NotificationScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: customAppbar(notificationAppBartitle),
+        appBar: customAppbar(notificationAppbarTitle),
         body: notificationMainView());
   }
 }

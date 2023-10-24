@@ -1,8 +1,25 @@
-import 'package:country_flags/country_flags.dart';
+import 'package:taxiliz/config/utils/export_utils.dart';
 import 'package:taxiliz/presentation/screen/widget/export_widget.dart';
 
 import '../theme/theme.dart';
-import 'export_utils.dart';
+
+Widget buildLanguageOption(
+    String languageCode, String languageName, BuildContext context) {
+  return SimpleDialogOption(
+    onPressed: () {
+      Navigator.pop(context);
+    },
+    child: Row(
+      children: [
+        buildFlagWidget(languageCode),
+        SizedBox(width: defaultSpacing),
+        Text(
+          languageName,
+        ),
+      ],
+    ),
+  );
+}
 
 void showSelectLanguageDialog(BuildContext context) {
   showDialog(
@@ -10,73 +27,34 @@ void showSelectLanguageDialog(BuildContext context) {
     builder: (context) {
       return SimpleDialog(
         children: [
-          SimpleDialogOption(
-            onPressed: () {
-              Navigator.pop(context);
-              // Gérer la sélection de la langue (par exemple, français)
-            },
-            child: Row(
-              children: [
-                Container(
-                  width: 27,
-                  height: 18,
-                  child: CountryFlag.fromLanguageCode('fr'),
-                ),
-                SizedBox(width: defaultSpace),
-                Text(
-                  'Français',
-                  style: TextStyle(
-                    color: Color(0xFF262626),
-                    fontSize: 14,
-                    fontFamily: 'Poppins',
-                    fontWeight: FontWeight.w400,
-                    height: 0,
-                  ),
-                ),
-              ],
-            ),
-          ),
+          buildLanguageOption('fr', 'Français', context),
           Divider(
-            thickness: 0.5,
-            color: kBlack,
+            thickness: thicknessValue_05,
+            color: AppStyle.kBlack,
           ),
-          SimpleDialogOption(
-            onPressed: () {
-              Navigator.pop(context);
-              // Gérer la sélection de la langue (par exemple, anglais)
-            },
-            child: Row(
-              children: [
-                Container(
-                  width: flagSizeWith,
-                  height: flagSizeHeight,
-                  child: CountryFlag.fromLanguageCode('en'),
-                ),
-                SizedBox(width: 10),
-                Text(
-                  'English',
-                  style: TextStyle(
-                    color: Color(0xFF262626),
-                    fontSize: 14,
-                    fontFamily: 'Poppins',
-                    fontWeight: FontWeight.w400,
-                    height: 0,
-                  ),
-                ),
-              ],
-            ),
-          ),
+          buildLanguageOption('en', 'English', context),
         ],
       );
     },
   );
 }
 
-showConfirmationDialog(BuildContext context, String title, String subtitle,
-    VoidCallback onYesPressed) {
+void showConfirmationDialog(BuildContext context, String title, String subtitle,
+    VoidCallback onYesTap) {
   showDialog(
     context: context,
     builder: (context) {
+      Widget cancelButton = customDialogConfirmationBtn(
+        'No',
+        false,
+        onTap: () {
+          Navigator.of(context).pop();
+        },
+      );
+
+      Widget confirmButton =
+          customDialogConfirmationBtn('Yes', true, onTap: onYesTap);
+
       return AlertDialog(
         title: Text(title, textAlign: TextAlign.center),
         content: Column(
@@ -85,30 +63,14 @@ showConfirmationDialog(BuildContext context, String title, String subtitle,
             Text(
               subtitle,
               textAlign: TextAlign.center,
-              style: TextStyle(
-                color: Color(0xFF262626),
-                fontSize: 16,
-                fontFamily: 'Poppins',
-                fontWeight: FontWeight.w500,
-                height: 1.33,
-              ),
             ),
-            const SizedBox(height: 20),
+            SizedBox(height: doubleSpacing),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                Expanded(
-                    child: customDialogConfirmationBtn(
-                  'No',
-                  false,
-                  onTap: () {
-                    Navigator.of(context).pop();
-                  },
-                )),
-                const SizedBox(width: 20),
-                Expanded(
-                    child: customDialogConfirmationBtn('Yes', true,
-                        onTap: onYesPressed)),
+                Expanded(child: cancelButton),
+                SizedBox(width: doubleSpacing),
+                Expanded(child: confirmButton),
               ],
             ),
           ],
@@ -118,14 +80,3 @@ showConfirmationDialog(BuildContext context, String title, String subtitle,
   );
 }
 
-class CardData {
-  final String title;
-  final String subtitle;
-  final String imagePath;
-
-  CardData({
-    required this.title,
-    required this.subtitle,
-    required this.imagePath,
-  });
-}

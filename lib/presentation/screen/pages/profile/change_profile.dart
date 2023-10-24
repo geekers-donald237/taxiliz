@@ -1,5 +1,6 @@
 import '../../../../../config/utils/export_utils.dart';
-import '../../widget/utils/helpers_widget.dart';
+import '../../widget/utils/reusable_other.dart';
+import '../../widget/utils/main_view.dart';
 
 class changeProfileScreen extends StatefulWidget {
   const changeProfileScreen({super.key});
@@ -12,7 +13,7 @@ class _changeProfileScreenState extends State<changeProfileScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: customAppbar(viewProfileAppBartitle),
+      appBar: customAppbar(viewProfileAppbarTitle),
       body: changeProfileMainView(context),
     );
   }

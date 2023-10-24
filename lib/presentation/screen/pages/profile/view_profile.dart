@@ -1,5 +1,6 @@
 import '../../../../config/utils/export_utils.dart';
-import '../../widget/utils/helpers_widget.dart';
+import '../../widget/utils/reusable_other.dart';
+import '../../widget/utils/main_view.dart';
 
 class profileScreen extends StatefulWidget {
   const profileScreen({super.key});
@@ -12,7 +13,7 @@ class _profileScreenState extends State<profileScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: customAppbar(profileAppBartitle),
+      appBar: customAppbar(profileAppbarTitle),
       body: mainProfileView(context),
     );
   }

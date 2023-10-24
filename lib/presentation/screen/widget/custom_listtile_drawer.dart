@@ -13,8 +13,8 @@ class CustomDrawerListile extends StatelessWidget {
     return Column(
       children: [
         ListTile(
-          textColor: kBlack,
-          iconColor: kBlack,
+          textColor: AppStyle.kBlack,
+          iconColor: AppStyle.kBlack,
           title: Text(title),
           leading: Icon(icon),
           onTap: onTap,

@@ -18,13 +18,13 @@ class CarLeaseCard extends StatelessWidget {
       shape: RoundedRectangleBorder(
         borderRadius: defaultBorderRadius,
         side: BorderSide(
-          color: kDefaultColor,
+          color: AppStyle.kDefaultColor,
           width: customBorderWidth,
         ),
       ),
       clipBehavior: Clip.antiAliasWithSaveLayer,
       child: Padding(
-        padding: const EdgeInsets.all(defaultSpace / 2),
+        padding: const EdgeInsets.all(defaultSpacing_5),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -34,7 +34,7 @@ class CarLeaseCard extends StatelessWidget {
               width: cardImageWidth,
               decoration: BoxDecoration(
                 border: Border.all(
-                  color: kTransparent,
+                  color: AppStyle.kTransparent,
                   width: customBorderWidth,
                 ),
                 borderRadius: defaultBorderRadius,
@@ -47,7 +47,7 @@ class CarLeaseCard extends StatelessWidget {
                 ),
               ),
             ),
-            Container(width: defaultSpace),
+            Container(width: defaultSpacing),
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -56,21 +56,21 @@ class CarLeaseCard extends StatelessWidget {
                   Text(
                     title,
                     style: TextStyle(
-                      color: kBlack,
+                      color: AppStyle.kBlack,
                       fontSize: fontsize_20,
                     ),
                   ),
                   Text(
                     'Car Lease',
                     style: TextStyle(
-                      color: kBlack,
+                      color: AppStyle.kBlack,
                       fontSize: fontsize_15,
                     ),
                   ),
                   Text(
                     subtitle,
                     style: TextStyle(
-                      color: kBlack,
+                      color: AppStyle.kBlack,
                       fontSize: fontsize_10,
                     ),
                   ),
@@ -81,11 +81,11 @@ class CarLeaseCard extends StatelessWidget {
                         child: ElevatedButton(
                           child: Text(
                             "Edit Details",
-                            style:
-                                TextStyle(fontSize: fontsize_10, color: kBlack),
+                            style: TextStyle(
+                                fontSize: fontsize_10, color: AppStyle.kBlack),
                           ),
                           style: ElevatedButton.styleFrom(
-                            primary: kDefaultColor,
+                            primary: AppStyle.kDefaultColor,
                             elevation: noElevation,
                             minimumSize:
                                 Size(cardEditButtonWidth, cardEditButtonHeight),
@@ -93,7 +93,7 @@ class CarLeaseCard extends StatelessWidget {
                           onPressed: () {},
                         ),
                       ),
-                      Icon(Icons.delete_outline_outlined),
+                      Icon(dleteIcons),
                     ],
                   ),
                 ],

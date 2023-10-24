@@ -19,13 +19,13 @@ class CustomCard extends StatelessWidget {
       shape: RoundedRectangleBorder(
         borderRadius: defaultBorderRadius,
         side: BorderSide(
-          color: kDefaultColor,
+          color: AppStyle.kDefaultColor,
           width: customBorderWidth,
         ),
       ),
       clipBehavior: Clip.antiAliasWithSaveLayer,
       child: Padding(
-        padding: const EdgeInsets.all(defaultSpace / 2),
+        padding: const EdgeInsets.all(defaultSpacing / 2),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -35,7 +35,7 @@ class CustomCard extends StatelessWidget {
               width: cardImageWidth,
               decoration: BoxDecoration(
                 border: Border.all(
-                  color: kTransparent,
+                  color: AppStyle.kTransparent,
                   width: customBorderWidth,
                 ),
                 borderRadius: defaultBorderRadius,
@@ -48,7 +48,7 @@ class CustomCard extends StatelessWidget {
                 ),
               ),
             ),
-            Container(width: defaultSpace),
+            Container(width: defaultSpacing),
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -57,14 +57,14 @@ class CustomCard extends StatelessWidget {
                   Text(
                     title,
                     style: TextStyle(
-                      color: kBlack,
+                      color: AppStyle.kBlack,
                       fontSize: fontsize_20,
                     ),
                   ),
                   Text(
                     subtitle,
                     style: TextStyle(
-                      color: kBlack,
+                      color: AppStyle.kBlack,
                       fontSize: fontsize_10,
                     ),
                   ),
@@ -79,7 +79,7 @@ class CustomCard extends StatelessWidget {
                         child: ElevatedButton(
                           child: Text("Edit"),
                           style: ElevatedButton.styleFrom(
-                            primary: kDefaultColor,
+                            primary: AppStyle.kDefaultColor,
                             elevation: noElevation,
                             minimumSize:
                                 Size(cardEditButtonWidth, cardEditButtonHeight),

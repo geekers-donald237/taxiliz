@@ -1,5 +1,6 @@
 import 'package:taxiliz/config/utils/export_utils.dart';
-import '../../widget/utils/helpers_widget.dart';
+import '../../widget/utils/reusable_other.dart';
+import '../../widget/utils/main_view.dart';
 
 class LoginOrSignupScreen extends StatefulWidget {
   const LoginOrSignupScreen({super.key});

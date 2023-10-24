@@ -1,0 +1,15 @@
+export 'package:taxiliz/presentation/screen/pages/auth/forget_pwd.dart';
+export 'package:taxiliz/presentation/screen/pages/auth/login.dart';
+export 'package:taxiliz/presentation/screen/pages/auth/register.dart';
+export 'package:taxiliz/presentation/screen/pages/home/add_car_lease.dart';
+export 'package:taxiliz/presentation/screen/pages/home/received_applies.dart';
+export 'package:taxiliz/presentation/screen/pages/home/terms_and_condition.dart';
+export '../../presentation/screen/pages/home/help_center.dart';
+export '../../presentation/screen/pages/home/privacy_policy.dart';
+export '../../presentation/screen/pages/profile/change_profile.dart';
+export '../../presentation/screen/pages/profile/manage_car.dart';
+export '../../presentation/screen/pages/profile/update_password.dart';
+export '../../presentation/screen/pages/splash/login_or_signup_screen.dart';
+export '../../presentation/screen/pages/splash/select_language.dart';
+export '../../presentation/screen/widget/bottom_bar/nav_bar.dart';
+export '../../presentation/screen/widget/export_widget.dart';

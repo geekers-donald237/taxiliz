@@ -1,5 +1,7 @@
 import 'package:taxiliz/presentation/screen/widget/export_widget.dart';
 
+import '../../widget/utils/main_view.dart';
+
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
 

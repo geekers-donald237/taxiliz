@@ -7,20 +7,25 @@ class NotificationCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final double cardHeight = notificationCardHeight;
+    final double borderWidth = customBorderWidth;
+    final Color borderColor = AppStyle.kDefaultColor;
+    final EdgeInsets cardPadding = AppStyle.cardPadding;
+
     return Container(
-      margin: EdgeInsets.only(top: defaultSpace),
+      margin: EdgeInsets.only(top: defaultSpacing),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Expanded(
             child: Container(
-              height: notificationCardHeight,
+              height: cardHeight,
               decoration: BoxDecoration(
                 color: Colors.white,
-                borderRadius: BorderRadius.circular(defaultSpace),
+                borderRadius: BorderRadius.circular(defaultSpacing),
                 border: Border.all(
-                  width: customBorderWidth,
-                  color: kDefaultColor,
+                  width: borderWidth,
+                  color: borderColor,
                 ),
               ),
               child: Padding(
@@ -38,11 +43,14 @@ class NotificationCard extends StatelessWidget {
                           text: TextSpan(
                             children: [
                               TextSpan(
-                                  text:
-                                      'Pulvinar quisquesed molestie tellus eleifend tellusquis.\nLorem ipsum dolor sit amet...',
-                                  style: AppStyle.notifCardDescription),
+                                text:
+                                    'Pulvinar quisquesed molestie tellus eleifend tellusquis.\nLorem ipsum dolor sit amet...',
+                                style: AppStyle.notifCardDescription,
+                              ),
                               TextSpan(
-                                  text: 'View More', style: AppStyle.viewMore),
+                                text: 'View More',
+                                style: AppStyle.viewMore,
+                              ),
                             ],
                           ),
                         )

@@ -28,7 +28,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
           hintText: widget.hintText,
           prefixIcon: Icon(
             widget.icon,
-            color: kBlack,
+            color: AppStyle.kBlack,
           ),
           contentPadding:
               EdgeInsets.symmetric(vertical: 12.0), // Ajuste la hauteur
@@ -36,13 +36,14 @@ class _CustomTextFieldState extends State<CustomTextField> {
           fillColor: Colors.white, // Couleur d'arrière-plan blanche
           border: OutlineInputBorder(
             borderRadius: defaultBorderRadius,
-            borderSide: BorderSide(color: kBlack, width: customBorderWidth),
+            borderSide:
+                BorderSide(color: AppStyle.kBlack, width: customBorderWidth),
           ),
           suffixIcon: widget.isPassword
               ? IconButton(
                   icon: Icon(
                     _obscureText ? Icons.visibility : Icons.visibility_off,
-                    color: kBlack,
+                    color: AppStyle.kBlack,
                   ),
                   onPressed: () {
                     setState(() {
@@ -99,13 +100,40 @@ class TextAreaWithLabel extends StatelessWidget {
             decoration: InputDecoration(
               border: OutlineInputBorder(
                 borderRadius: defaultBorderRadius,
-                borderSide: BorderSide(color: kBlack, width: customBorderWidth),
+                borderSide: BorderSide(
+                    color: AppStyle.kBlack, width: customBorderWidth),
               ), // Bordure de la zone de texte
               contentPadding:
-                  EdgeInsets.all(defaultSpace), // Rembourrage interne
+                  EdgeInsets.all(defaultSpacing), // Rembourrage interne
             ),
           ),
         ],
+      ),
+    );
+  }
+}
+
+class PolicyTextView extends StatelessWidget {
+  final String text;
+
+  const PolicyTextView({required this.text});
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(doubleSpacing),
+      child: SingleChildScrollView(
+        child: Expanded(
+          child: Text(
+            text,
+            style: TextStyle(
+              color: Color(0xFF262626),
+              fontSize: 14,
+              fontWeight: FontWeight.w400,
+              height: 1.5,
+            ),
+          ),
+        ),
       ),
     );
   }
