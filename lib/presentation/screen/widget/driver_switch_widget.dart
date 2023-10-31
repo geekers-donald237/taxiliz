@@ -1,4 +1,4 @@
-
+import 'package:taxiliz/config/utils/constant.dart';
 import 'export_widget.dart';
 
 class DriverSwitchWidget extends StatefulWidget {
@@ -18,12 +18,9 @@ class _DriverSwitchWidgetState extends State<DriverSwitchWidget> {
   @override
   Widget build(BuildContext context) {
     return CustomDrawerListile(
-      icon: isDriverSwitched
-          ? Icons.toggle_on_outlined
-          : Icons.toggle_off_outlined,
+      icon: isDriverSwitched ? toggleOnIcon : toggleOffIcon,
       title: isDriverSwitched ? 'Switched to Driver' : 'Switch to Driver',
       onTap: toggleDriverSwitch, // Appeler la fonction pour basculer l'état
     );
   }
 }
-

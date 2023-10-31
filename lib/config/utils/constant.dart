@@ -6,6 +6,7 @@ const double splashLogoContainerHeight = 180.0;
 const double btnSpaceEscape = 15.0;
 const double defaultSpacing_6 = 8.0;
 const double defaultSpacing_5 = 5.0;
+const double avatarRadius = 80.0;
 
 const double defaultSpacing = 10.0;
 const double flagSizeWidth = 25.0;
@@ -13,10 +14,18 @@ const double flagSizeHeight = 20.0;
 const double cardBtnSizeWidth = 40.0;
 const double cardBtnSizeHeight = 40.0;
 const double dividerThickness = 2.0;
+const double widht_80 = 80;
+const double height_45 = 45;
+const double value_42 = 42;
+const double positioned_95 = 95;
+const double positioned_10 = 10;
+
 const double noElevation = 0.0;
 const double notificationCardHeight = 70.0;
 const double inputSeparation = 5.0;
 const double doubleSpacing = 20.0;
+const double iconSize = 25.0;
+
 const double tripleSpacing = 30.0;
 const double quadrupleSpacing = 40.0;
 const double defaultTextHeight = 1;
@@ -33,6 +42,7 @@ const int defaultTimer = 2;
 const double customAuthBtnWidth = 250.0;
 const double customAuthBtnHeight = 50.0;
 const double customBorderWidth = 1.5;
+const double selectWitdh = 1.0;
 const double customSelectLanguageWidth = 300.0;
 const double customSelectLanguageHeight = 50.0;
 
@@ -83,8 +93,7 @@ const double cardImageWidth = 160.0;
 const double cardEditButtonWidth = 40.0;
 const double cardEditButtonHeight = 20.0;
 
-
-// Icones 
+// Icones
 IconData emailIcon = Icons.email_outlined;
 IconData lockIcon = Icons.lock_outline_rounded;
 IconData personIcon = Icons.person_outlined;
@@ -99,3 +108,10 @@ IconData accessTimeIcon = Icons.access_time;
 IconData monetizationOnIcon = Icons.monetization_on;
 IconData arrowDropDownIcon = Icons.arrow_drop_down;
 IconData dleteIcons = Icons.delete_outline_outlined;
+IconData cameraIcon = Icons.camera_alt;
+IconData monetisation_on = Icons.monetization_on;
+IconData toggleOnIcon = Icons.toggle_on_outlined;
+IconData toggleOffIcon = Icons.toggle_off_outlined;
+IconData visibilityIcon = Icons.visibility;
+IconData visibilityOffIcon = Icons.visibility_off_outlined;
+IconData addIcon = Icons.add;

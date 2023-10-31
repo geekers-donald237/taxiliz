@@ -25,7 +25,8 @@ Widget buildFlagWidget(String languageCode) {
 Container buildContainerWithImage(String imagePath) {
   DecorationImage decorationImage = DecorationImage(
     image: AssetImage(imagePath),
-    fit: BoxFit.fill, // Remplacez fill par le mode de déformation souhaité
+    fit: BoxFit.fill, 
+
   );
 
   return Container(
@@ -158,8 +159,8 @@ Widget customDialogConfirmationBtn(
   return GestureDetector(
     onTap: onTap, // Attachez onTap au GestureDetector
     child: Container(
-      width: 80,
-      height: 40,
+      width: widht_80,
+      height: height_45,
       decoration: BoxDecoration(
         color: bgColor,
         borderRadius: BorderRadius.circular(defaultSpacing),
@@ -186,7 +187,7 @@ AppBar customAppbar(String appBarText) {
 }
 
 Widget addCarMainView(BuildContext context) {
-  return BuildTextInputForm(false, 'Done ', addcardInputs, context, 20);
+  return BuildTextInputForm(false, 'Done ', addcardInputs, context, doubleSpacing);
 }
 
 Widget notificationMainView() {
@@ -222,7 +223,7 @@ Widget notificationMainView() {
 
 Widget DisplayAllHomeViews(BuildContext context) {
   return Padding(
-    padding: const EdgeInsets.all(defaultSpacing * 2),
+    padding: const EdgeInsets.all(doubleSpacing),
     child: Column(
       children: [
         Column(
@@ -280,25 +281,33 @@ Stack buildProfilePhoto() {
   return Stack(
     alignment: Alignment.center,
     children: [
-      CircleAvatar(
-        radius: 80.0,
-        backgroundColor: Colors.grey,
-        backgroundImage: AssetImage(Localfiles.person),
-      ),
-      Positioned(
-        bottom: 0,
-        right: 0,
-        child: Container(
-          decoration: BoxDecoration(
-            shape: BoxShape.circle,
-            color: Colors.white,
-          ),
-          child: IconButton(
-            icon: Icon(Icons.camera_alt),
-            onPressed: () {},
-          ),
-        ),
-      ),
+      buildProfilePicture(),
+      buildCameraIcon(),
     ],
   );
+}
+
+Positioned buildCameraIcon() {
+  return Positioned(
+      bottom: 0,
+      right: 0,
+      child: Container(
+        decoration: BoxDecoration(
+          shape: BoxShape.circle,
+          color: AppStyle.kWhite,
+        ),
+        child: IconButton(
+          icon: Icon(cameraIcon),
+          onPressed: () {},
+        ),
+      ),
+    );
+}
+
+CircleAvatar buildProfilePicture() {
+  return CircleAvatar(
+      radius: avatarRadius,
+      backgroundColor: AppStyle.kDefaultColor,
+      backgroundImage: AssetImage(Localfiles.person),
+    );
 }

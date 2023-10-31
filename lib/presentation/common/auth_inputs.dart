@@ -3,6 +3,7 @@ import '../screen/widget/checbox_with_text.dart';
 import '../screen/widget/custom_select.dart';
 import '../screen/widget/custom_textfield.dart';
 import '../screen/widget/lease_period.dart';
+import '../screen/widget/other_widget.dart';
 import '../screen/widget/utils/reusable_other.dart';
 
 final loginScreenInput = [

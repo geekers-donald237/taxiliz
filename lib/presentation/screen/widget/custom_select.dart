@@ -32,24 +32,23 @@ class CountryCitySelection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child: Container(
-        margin: EdgeInsets.only(bottom: 5, top: 5),
+        margin: EdgeInsets.only(bottom: defaultSpacing_5, top: defaultSpacing_5),
         decoration: BoxDecoration(
-          color: Colors.white,
+          color: AppStyle.kWhite,
           border: Border.all(
-            color: AppStyle.kDefaultColor, // Couleur de la bordure
-            width: 1.0, // Largeur de la bordure
-          ),
+            color: AppStyle.kDefaultColor, 
+            width: selectWitdh,           ),
 
-          borderRadius: BorderRadius.circular(10), // Coins arrondis
+          borderRadius: BorderRadius.circular(defaultSpacing), 
         ),
-        padding: EdgeInsets.all(10), // Ajouter un espacement intérieur
+        padding: EdgeInsets.all(defaultSpacing), 
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(label),
             Icon(
-              Icons.arrow_drop_down,
-              size: 24,
+              arrowDropDownIcon,
+              size: iconSize,
             ),
           ],
         ),
@@ -70,7 +69,7 @@ class DisplayCityAndCountrySelection extends StatelessWidget {
           onChanged: (String? value) {},
         ),
         SizedBox(
-          width: 5,
+          width: defaultSpacing_5,
         ),
         CountryCitySelection(
           label: 'City',
@@ -91,7 +90,7 @@ class FrequencyText extends StatelessWidget {
           '(Weekly, Monthly, Quarterly)',
           style: TextStyle(
             color: AppStyle.kBlack,
-            fontSize: 8,
+            fontSize: fontsize_10,
             fontWeight: FontWeight.w500,
           ),
         )
@@ -115,7 +114,7 @@ class AddMoreFieldBtn extends StatelessWidget {
           color: AppStyle.kDefaultColor, // Couleur de fond grise
           border: Border.all(
             color: AppStyle.kDefaultColor, // Couleur de la bordure
-            width: 1.0, // Largeur de la bordure
+            width: customBorderWidth, // Largeur de la bordure
           ),
           borderRadius: BorderRadius.circular(10),
         ),

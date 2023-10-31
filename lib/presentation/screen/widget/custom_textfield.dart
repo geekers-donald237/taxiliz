@@ -31,9 +31,9 @@ class _CustomTextFieldState extends State<CustomTextField> {
             color: AppStyle.kBlack,
           ),
           contentPadding:
-              EdgeInsets.symmetric(vertical: 12.0), // Ajuste la hauteur
-          filled: true, // Remplit avec une couleur d'arrière-plan
-          fillColor: Colors.white, // Couleur d'arrière-plan blanche
+              EdgeInsets.symmetric(vertical: defaultSpacing), 
+          filled: true, 
+          fillColor: AppStyle.kWhite, 
           border: OutlineInputBorder(
             borderRadius: defaultBorderRadius,
             borderSide:
@@ -42,7 +42,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
           suffixIcon: widget.isPassword
               ? IconButton(
                   icon: Icon(
-                    _obscureText ? Icons.visibility : Icons.visibility_off,
+                    _obscureText ? visibilityIcon : visibilityOffIcon,
                     color: AppStyle.kBlack,
                   ),
                   onPressed: () {
@@ -59,59 +59,6 @@ class _CustomTextFieldState extends State<CustomTextField> {
   }
 }
 
-class TextAreaWithLabel extends StatelessWidget {
-  final String labelText;
-  final TextEditingController controller;
-  final bool labelPositionIscentered;
-
-  TextAreaWithLabel(
-      {required this.labelText,
-      required this.controller,
-      required this.labelPositionIscentered});
-
-  @override
-  Widget build(BuildContext context) {
-    MainAxisAlignment myAligment = labelPositionIscentered
-        ? MainAxisAlignment.center
-        : MainAxisAlignment.start;
-    return Container(
-      margin: EdgeInsets.only(top: 30),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Row(
-            mainAxisAlignment: myAligment,
-            children: [
-              Text(
-                labelText,
-                style: TextStyle(
-                  fontSize: fontsize_15,
-                  fontWeight: fontWeight_bold,
-                ),
-              ),
-            ],
-          ),
-          SizedBox(
-            height: 5,
-          ),
-          TextField(
-            controller: controller,
-            maxLines: 5, // Vous pouvez ajuster le nombre de lignes souhaité
-            decoration: InputDecoration(
-              border: OutlineInputBorder(
-                borderRadius: defaultBorderRadius,
-                borderSide: BorderSide(
-                    color: AppStyle.kBlack, width: customBorderWidth),
-              ), // Bordure de la zone de texte
-              contentPadding:
-                  EdgeInsets.all(defaultSpacing), // Rembourrage interne
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
 
 class PolicyTextView extends StatelessWidget {
   final String text;
@@ -126,12 +73,7 @@ class PolicyTextView extends StatelessWidget {
         child: Expanded(
           child: Text(
             text,
-            style: TextStyle(
-              color: Color(0xFF262626),
-              fontSize: 14,
-              fontWeight: FontWeight.w400,
-              height: 1.5,
-            ),
+            style: AppStyle.secondTextSpanStyle(),
           ),
         ),
       ),

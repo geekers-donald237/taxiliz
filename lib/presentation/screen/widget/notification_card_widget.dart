@@ -7,11 +7,6 @@ class NotificationCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final double cardHeight = notificationCardHeight;
-    final double borderWidth = customBorderWidth;
-    final Color borderColor = AppStyle.kDefaultColor;
-    final EdgeInsets cardPadding = AppStyle.cardPadding;
-
     return Container(
       margin: EdgeInsets.only(top: defaultSpacing),
       child: Row(
@@ -19,17 +14,17 @@ class NotificationCard extends StatelessWidget {
         children: [
           Expanded(
             child: Container(
-              height: cardHeight,
+              height: notificationCardHeight,
               decoration: BoxDecoration(
-                color: Colors.white,
+                color: AppStyle.kWhite,
                 borderRadius: BorderRadius.circular(defaultSpacing),
                 border: Border.all(
-                  width: borderWidth,
-                  color: borderColor,
+                  width: customBorderWidth,
+                  color: AppStyle.kDefaultColor,
                 ),
               ),
               child: Padding(
-                padding: cardPadding,
+                padding: AppStyle.cardPadding,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
@@ -38,7 +33,7 @@ class NotificationCard extends StatelessWidget {
                       children: [
                         Text('Lorem ipsum dolor sit amet',
                             style: AppStyle.notifCardTitle),
-                        const SizedBox(height: 4),
+                        const SizedBox(height: defaultSpacing_5),
                         RichText(
                           text: TextSpan(
                             children: [

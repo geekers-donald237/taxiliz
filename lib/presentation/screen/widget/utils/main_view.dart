@@ -9,7 +9,7 @@ import '../custom_listtile_drawer.dart';
 import '../custom_select.dart';
 import '../custom_textfield.dart';
 import '../driver_switch_widget.dart';
-import '../lease_period.dart';
+import '../other_widget.dart';
 import 'reusable_other.dart';
 
 Widget splashView(bool circularisLoading) {

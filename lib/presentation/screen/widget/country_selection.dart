@@ -31,7 +31,7 @@ class CountryCitySelection extends StatelessWidget {
             Text(label),
             Icon(
               arrowDropDownIcon,
-              size: 24,
+              size: iconSize,
             ),
           ],
         ),
