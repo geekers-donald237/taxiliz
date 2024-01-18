@@ -32,16 +32,17 @@ class CountryCitySelection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child: Container(
-        margin: EdgeInsets.only(bottom: defaultSpacing_5, top: defaultSpacing_5),
+        margin:
+            EdgeInsets.only(bottom: defaultSpacing_5, top: defaultSpacing_5),
         decoration: BoxDecoration(
           color: AppStyle.kWhite,
           border: Border.all(
-            color: AppStyle.kDefaultColor, 
-            width: selectWitdh,           ),
-
-          borderRadius: BorderRadius.circular(defaultSpacing), 
+            color: AppStyle.kDefaultColor,
+            width: selectWitdh,
+          ),
+          borderRadius: BorderRadius.circular(defaultSpacing),
         ),
-        padding: EdgeInsets.all(defaultSpacing), 
+        padding: EdgeInsets.all(defaultSpacing),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -99,7 +100,6 @@ class FrequencyText extends StatelessWidget {
   }
 }
 
-
 class AddMoreFieldBtn extends StatelessWidget {
   const AddMoreFieldBtn({
     super.key,
@@ -146,7 +146,6 @@ class AddMoreFieldBtn extends StatelessWidget {
   }
 }
 
-
 class ImageSliderWidget extends StatelessWidget {
   final List<String> imagePaths;
 
@@ -159,7 +158,7 @@ class ImageSliderWidget extends StatelessWidget {
       decoration: BoxDecoration(
         color: AppStyle.kDefaultColor,
       ),
-      padding: EdgeInsets.all(10),
+      // padding: EdgeInsets.all(10),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: imagePaths
@@ -169,9 +168,8 @@ class ImageSliderWidget extends StatelessWidget {
                   Image.asset(
                     imagePath,
                     height: 120.0, // Ajustez la hauteur selon vos besoins
-                    width: 160.0, // Ajustez la largeur selon vos besoins
+                    width: 120.0, // Ajustez la largeur selon vos besoins
                   ),
-                  SizedBox(height: 16),
                 ],
               ),
             )
@@ -180,7 +178,6 @@ class ImageSliderWidget extends StatelessWidget {
     );
   }
 }
-
 
 class ReceivedItem extends StatelessWidget {
   @override
@@ -276,5 +273,3 @@ class ContactIcon extends StatelessWidget {
     );
   }
 }
-
-

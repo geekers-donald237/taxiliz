@@ -1,4 +1,3 @@
-
 import 'package:taxiliz/presentation/screen/widget/utils/reusable_other.dart';
 
 import '../../../config/theme/theme.dart';
@@ -24,14 +23,8 @@ class CommonText extends StatelessWidget {
   }
 }
 
-Widget commonFormView(
-  BuildContext context, 
-  String imagePath, 
-  String titleText, 
-  String buttonText, 
-  List<Widget> inputFields, 
-  double spacing
-) {
+Widget commonFormView(BuildContext context, String imagePath, String titleText,
+    String buttonText, List<Widget> inputFields, double spacing) {
   return createReusableContainer(
     Center(
       child: Column(
@@ -47,7 +40,6 @@ Widget commonFormView(
     ),
   );
 }
-
 
 class TextAreaWithLabel extends StatelessWidget {
   final String labelText;
@@ -65,7 +57,6 @@ class TextAreaWithLabel extends StatelessWidget {
         ? MainAxisAlignment.center
         : MainAxisAlignment.start;
     return Container(
-      margin: EdgeInsets.only(top: tripleSpacing),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -82,7 +73,7 @@ class TextAreaWithLabel extends StatelessWidget {
             ],
           ),
           SizedBox(
-            height: 5,
+            height: defaultSpacing_5,
           ),
           TextField(
             controller: controller,
@@ -97,9 +88,11 @@ class TextAreaWithLabel extends StatelessWidget {
                   EdgeInsets.all(defaultSpacing), // Rembourrage interne
             ),
           ),
+          SizedBox(
+            height: defaultSpacing_5,
+          ),
         ],
       ),
     );
   }
 }
-

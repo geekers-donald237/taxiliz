@@ -156,6 +156,9 @@ final addcardInputs = [
     controller: TextEditingController(),
     labelPositionIscentered: false,
   ),
+  SizedBox(
+    height: defaultSpacing_5,
+  ),
   ImageSliderWidget([
     Localfiles.carImg1,
     Localfiles.carImg2,

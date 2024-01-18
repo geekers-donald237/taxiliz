@@ -30,12 +30,10 @@ const double tripleSpacing = 30.0;
 const double quadrupleSpacing = 40.0;
 const double defaultTextHeight = 1;
 
-// Épaisseurs
 const double thicknessValue_05 = 0.5;
 const double thicknessValue_1 = 1.0;
 const double thicknessValue_15 = 1.5;
 
-//Timer
 const int defaultTimer = 2;
 
 // Tailles de bouton
@@ -46,20 +44,20 @@ const double selectWitdh = 1.0;
 const double customSelectLanguageWidth = 300.0;
 const double customSelectLanguageHeight = 50.0;
 
-// Polices et styles de texte
+
 const double fontsize_10 = 10;
 const double fontsize_15 = 15;
 const double fontsize_20 = 20;
 const double fontsize_30 = 30;
 const String defaultFontFamily = 'Poppins';
 
-// Styles de texte
+
 const FontWeight fontWeight_300 = FontWeight.w300;
 const FontWeight fontWeight_400 = FontWeight.w400;
 const FontWeight fontWeight_500 = FontWeight.w500;
 const FontWeight fontWeight_bold = FontWeight.bold;
 
-// Paramètres d'appbar
+
 const bool centerTitle = true;
 const String homeScreenAppbarTitle = "Home Screen";
 const String notificationAppbarTitle = "Notification";
@@ -80,20 +78,17 @@ const String verificationAppbarTitle = "Update Password";
 const String registerAppbarTitle = "Register now";
 const String loginAppbarTitle = "Login";
 
-// Dimensions du tiroir (Drawer)
 const double drawerAvatarRadius = 40;
 const double drawerHorizontalPadding = 25;
 const double drawerVerticalPadding = 25;
 const double drawerAvatarSpacing = 15;
 
-// Dimensions de la carte (Card)
 final defaultBorderRadius = BorderRadius.circular(defaultSpacing);
 const double cardImageHeight = 120.0;
 const double cardImageWidth = 160.0;
 const double cardEditButtonWidth = 40.0;
 const double cardEditButtonHeight = 20.0;
 
-// Icones
 IconData emailIcon = Icons.email_outlined;
 IconData lockIcon = Icons.lock_outline_rounded;
 IconData personIcon = Icons.person_outlined;

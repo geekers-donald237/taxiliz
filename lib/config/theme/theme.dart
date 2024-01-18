@@ -1,7 +1,6 @@
 import '../utils/export_utils.dart';
 
 class AppStyle {
-  // Couleurs
   static final Color kDefaultColor =  Color.fromARGB(255, 143, 140, 140);
   static final Color kSecondaryColor =  Color(0xFF97A6BF);
   static final Color kWhite = Colors.white;
@@ -16,14 +15,14 @@ class AppStyle {
   static final Alignment beginAlignment =  Alignment(0.0, -1.0);
   static final Alignment endAlignment =  Alignment(0.0, 1.0);
 
-  // Gradient linéaire
+  
   static final LinearGradient gradient = LinearGradient(
     begin: beginAlignment,
     end: endAlignment,
     colors: [kSecondaryColor, kWhite],
   );
 
-  // Ajustement d'image
+  
   static final BoxFit fill = BoxFit.fill;
   static final DecorationImage decorationImage = DecorationImage(
     image: const AssetImage(Localfiles.logo),
@@ -39,7 +38,8 @@ class AppStyle {
       BoxDecoration(gradient: gradient);
   static final EdgeInsets cardPadding =  EdgeInsets.all(defaultSpacing);
 
-  // Text Styles
+ 
+
   static final TextStyle kBlackTextStyle = TextStyle(
     color: kBlack,
   );
